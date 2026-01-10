@@ -53,13 +53,21 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // Add staggered animation delay for cards
-            const cards = entry.target.parentElement.querySelectorAll('.servicio-card, .portfolio-item');
+        }
+    });
+}, observerOptions);
+
+// Separate observer for section containers to trigger staggered animations
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.servicio-card, .portfolio-item');
             cards.forEach((card, index) => {
                 setTimeout(() => {
                     card.classList.add('visible');
                 }, index * 100);
             });
+            sectionObserver.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -75,6 +83,12 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 portfolioItems.forEach(item => {
     observer.observe(item);
 });
+
+// Observe sections for staggered animations
+const serviciosSection = document.querySelector('.servicios-grid');
+const portfolioSection = document.querySelector('.portfolio-grid');
+if (serviciosSection) sectionObserver.observe(serviciosSection);
+if (portfolioSection) sectionObserver.observe(portfolioSection);
 
 // ===================================
 // Parallax Effect for Hero Section
@@ -163,7 +177,8 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const particles = [];
-const particleCount = 50;
+// Adjust particle count based on device capabilities
+const particleCount = window.matchMedia('(max-width: 768px)').matches ? 20 : 50;
 
 class Particle {
     constructor(x, y) {
@@ -172,7 +187,10 @@ class Particle {
         this.size = Math.random() * 3 + 1;
         this.speedX = Math.random() * 3 - 1.5;
         this.speedY = Math.random() * 3 - 1.5;
-        this.color = `rgba(0, 255, ${Math.random() * 136 + 120}, ${Math.random() * 0.5 + 0.3})`;
+        // Color range based on primary neon green (#00ff88)
+        const COLOR_GREEN_MIN = 120;
+        const COLOR_GREEN_MAX = 256;
+        this.color = `rgba(0, 255, ${Math.random() * (COLOR_GREEN_MAX - COLOR_GREEN_MIN) + COLOR_GREEN_MIN}, ${Math.random() * 0.5 + 0.3})`;
         this.life = 100;
     }
 
@@ -240,6 +258,12 @@ window.addEventListener('load', () => {
         document.body.style.transition = 'opacity 0.5s ease-in';
         document.body.style.opacity = '1';
     }, 100);
+    
+    // Set current year in footer
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 });
 
 // ===================================
