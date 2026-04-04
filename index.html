@@ -1,372 +1,464 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LG.Digital | Agencia Web y SEO que convierte visitas en ventas</title>
-    <meta name="description" content="LG.Digital impulsa negocios con desarrollo web profesional, SEO local y gestión de redes. Diseñamos estrategias para vender más desde San Nicolás.">
-    <link rel="icon" type="image/x-icon" href="assets/G.digital.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preload" as="image" href="assets/Banner 2.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROOMIES | Marketing Estratégico</title>
+  <meta name="description" content="Transformamos marketing en un motor de crecimiento escalable mediante estrategia, contenido y arquitectura digital.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="assets/roomies-logo-white.png" as="image">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
+
 <body>
-    <header class="site-header">
-        <nav class="navbar">
-            <div class="container nav-container">
-                <a href="#inicio" class="logo" aria-label="Ir al inicio de LG.Digital">
-                    <img src="assets/LG.png" alt="Logo LG.Digital">
-                </a>
-                <button class="mobile-menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
-                    <i class="fas fa-bars" aria-hidden="true"></i>
-                </button>
-                <ul class="nav-links" id="main-nav">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#metodo">Método</a></li>
-                    <li><a href="#proyectos">Casos reales</a></li>
-                    <li><a href="#contacto" class="btn-nav">Agendar llamada</a></li>
-                </ul>
-            </div>
-        </nav>
 
-        <section id="inicio" class="hero">
-            <div class="container hero-content">
-                <p class="eyebrow">Agencia digital en San Nicolás, Buenos Aires</p>
-                <h1>Tu negocio merece una web que se vea profesional y venda todos los días.</h1>
-                <p class="hero-subtitle">Combinamos diseño premium, desarrollo veloz y marketing estratégico para que te encuentren en Google, te crean a primera vista y te contacten por WhatsApp.</p>
+  <!-- CURSOR CUSTOM -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
 
-                <div class="hero-cta">
-                    <a href="#contacto" class="btn btn-primary">Quiero mi diagnóstico gratuito</a>
-                    <a href="#proyectos" class="btn btn-outline">Ver resultados reales</a>
-                </div>
+  <!-- NOISE OVERLAY -->
+  <div class="noise-overlay" aria-hidden="true"></div>
 
-                <ul class="hero-highlights">
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Sitios optimizados para SEO</li>
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Carga rápida en mobile</li>
-                    <li><i class="fas fa-check-circle" aria-hidden="true"></i> Estrategia enfocada en ventas</li>
-                </ul>
-            </div>
-        </section>
-    </header>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imagen">
+    <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+    <button class="lightbox-nav prev" aria-label="Anterior">&#10094;</button>
+    <img class="lightbox-img" id="lightbox-img" alt="Imagen del evento">
+    <button class="lightbox-nav next" aria-label="Siguiente">&#10095;</button>
+  </div>
 
-    <main>
-        <section class="trust-bar" aria-label="Indicadores de resultados">
-            <div class="container trust-grid">
-                <article>
-                    <strong>+25</strong>
-                    <span>proyectos entregados</span>
-                </article>
-                <article>
-                    <strong>95%</strong>
-                    <span>clientes por recomendación</span>
-                </article>
-                <article>
-                    <strong>24/7</strong>
-                    <span>canal de venta activo</span>
-                </article>
-                <article>
-                    <strong>1:1</strong>
-                    <span>acompañamiento personalizado</span>
-                </article>
-            </div>
-        </section>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <img src="assets/roomies-logo-white.png" alt="Roomies Logo">
+      </a>
+      <div class="nav-links">
+        <a href="#method" class="nav-link">Método</a>
+        <a href="#services" class="nav-link">Servicios</a>
+        <a href="#plans" class="nav-link">Planes</a>
+        <a href="#about" class="nav-link">Nosotros</a>
+      </div>
+      <a href="#cta" class="btn btn-primary btn-sm nav-btn">Contactanos</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#method">Método</a>
+      <a href="#services">Servicios</a>
+      <a href="#plans">Planes</a>
+      <a href="#about">Nosotros</a>
+      <a href="#cta" class="btn btn-primary">Reservar llamada</a>
+    </div>
+  </nav>
 
-        <section id="servicios" class="section section-light">
-            <div class="container">
-                <div class="section-header">
-                    <p class="eyebrow">Servicios principales</p>
-                    <h2>Todo lo que necesitás para destacar frente a tu competencia</h2>
-                    <p>Diseñamos planes integrales para atraer clientes, transmitir confianza y convertir visitas en consultas reales.</p>
-                </div>
-                <div class="services-grid">
-                    <article class="card service-card">
-                        <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
-                        <h3>Diseño y desarrollo web profesional</h3>
-                        <p>Webs a medida, responsivas y optimizadas para conversión. Tu marca se ve sólida en celulares, tablets y escritorio.</p>
-                    </article>
-                    <article class="card service-card">
-                        <div class="icon-box"><i class="fas fa-magnifying-glass-chart"></i></div>
-                        <h3>SEO local y posicionamiento orgánico</h3>
-                        <p>Aparecé cuando tus potenciales clientes buscan tus servicios en Google, sin depender solo de anuncios pagos.</p>
-                    </article>
-                    <article class="card service-card">
-                        <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
-                        <h3>Gestión de redes y contenido comercial</h3>
-                        <p>Publicaciones estratégicas para fortalecer tu imagen y llevar tráfico de calidad hacia tu web o WhatsApp.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+  <main>
 
-        <section id="metodo" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <p class="eyebrow">Nuestro método</p>
-                    <h2>Un proceso simple, medible y sin vueltas</h2>
-                </div>
-                <div class="steps-grid">
-                    <article class="step-card">
-                        <span>01</span>
-                        <h3>Diagnóstico estratégico</h3>
-                        <p>Analizamos tu negocio, tus objetivos y tu competencia para detectar oportunidades reales.</p>
-                    </article>
-                    <article class="step-card">
-                        <span>02</span>
-                        <h3>Propuesta personalizada</h3>
-                        <p>Definimos una hoja de ruta clara con entregables, tiempos y foco en retorno comercial.</p>
-                    </article>
-                    <article class="step-card">
-                        <span>03</span>
-                        <h3>Implementación y mejora continua</h3>
-                        <p>Construimos, medimos y optimizamos para que tu activo digital siga creciendo mes a mes.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <!-- HERO -->
+    <section class="hero" id="hero">
 
-        <section id="proyectos" class="section section-light">
-            <div class="container">
-                <div class="section-header">
-                    <p class="eyebrow">Casos de éxito</p>
-                    <h2>Clientes reales. Resultados que se pueden mostrar.</h2>
-                </div>
-                <div class="projects-grid">
-                    <article class="project-card project-violeta">
-                        <div class="project-overlay"></div>
-                        <div class="project-info">
-                            <h3>Violeta Dance Estudio</h3>
-                            <span class="badge">Web institucional + SEO</span>
-                            <p>Presencia profesional para captar alumnas, centralizar información y aumentar consultas directas.</p>
-                            <a href="https://www.violetadance.site/" target="_blank" rel="noopener noreferrer" class="link-arrow">Visitar sitio <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    <article class="project-card project-daniela">
-                        <div class="project-overlay"></div>
-                        <div class="project-info">
-                            <h3>Daniela Moreira Podología</h3>
-                            <span class="badge">Landing + WhatsApp</span>
-                            <p>Landing orientada a turnos con foco en claridad de servicios, reputación y contacto inmediato.</p>
-                            <a href="https://www.podologiadanielamoreira.com/" target="_blank" rel="noopener noreferrer" class="link-arrow">Visitar sitio <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    <article class="project-card project-eics">
-                        <div class="project-overlay"></div>
-                        <div class="project-info">
-                            <h3>EI&amp;CS Ingeniería</h3>
-                            <span class="badge">Web corporativa + branding</span>
-                            <p>Identidad digital sólida para una empresa técnica que necesitaba comunicar confianza y trayectoria.</p>
-                            <a href="https://www.eicsindustrial.com.ar/" target="_blank" rel="noopener noreferrer" class="link-arrow">Visitar sitio <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    <article class="project-card project-repuestos">
-                        <div class="project-overlay"></div>
-                        <div class="project-info">
-                            <h3>Repuestos Pro</h3>
-                            <span class="badge">E-commerce</span>
-                            <p>Tienda online con catálogo, carrito de compras. </p>
-                            <a href="https://repuestospro.empretienda.com.ar/" target="_blank" rel="noopener noreferrer" class="link-arrow">Visitar sitio <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                     <article class="project-card project-contadora">
-                        <div class="project-overlay"></div>
-                        <div class="project-info">
-                            <h3>Contadora Julieta Cerisola</h3>
-                            <span class="badge"> Estudio contable </span>
-                            <p>Estudio Contable Online</p>
-                            <a href="https://www.julietacerisolacontadora.com.ar/" target="_blank" rel="noopener noreferrer" class="link-arrow">Visitar sitio <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-grid"></div>
+        <div class="hero-glow hero-glow--top"></div>
+        <div class="hero-glow hero-glow--left"></div>
+        <div class="hero-glow hero-glow--right"></div>
+      </div>
 
-        <section id="testimonios" class="section testimonials-section">
-            <div class="container">
-                <div class="section-header">
-                    <p class="eyebrow">Testimonios</p>
-                    <h2>Lo que dicen quienes ya trabajaron con nosotros</h2>
-                </div>
-                <div class="testimonials-grid">
-                    <article class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-avatar"><img src="assets/Podologa.jpg" alt="Daniela Moreira"></div>
-                            <div>
-                                <h4>Daniela Moreira</h4>
-                                <p>Podóloga · San Nicolás</p>
-                            </div>
-                        </div>
-                        <p>“Me encantó la predisposición y el profesionalismo durante todo el proceso. Hoy mis pacientes encuentran rápido mi contacto y turnos.”</p>
-                    </article>
-                    <article class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-avatar"><img src="assets/Violeta Dance.webp" alt="Violeta Dance"></div>
-                            <div>
-                                <h4>Violeta Dance Estudio</h4>
-                                <p>Academia de danza</p>
-                            </div>
-                        </div>
-                        <p>“La web refleja exactamente nuestra esencia. Además, nos ayudó a ordenar la comunicación y generar más consultas de nuevas alumnas.”</p>
-                    </article>
-                    <article class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-avatar"><img src="assets/repuestos-cliente.jpg" alt="Repuestos Pro"></div>
-                            <div>
-                                <h4>Repuestos Pro</h4>
-                                <p>E-commerce de Repuestos para celulares.</p>
-                            </div>
-                        </div>
-                        <p>“Digitalizamos el negocio y el canal online empezó a vender desde el primer mes. La inversión valió totalmente la pena.”</p>
-                    </article>
-                    
-                    <article class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-avatar"><img src="assets/Logo Circular.png" alt="Julieta Cerisola"></div>
-                            <div>
-                                <h4>Julieta Cerisola</h4>
-                                <p>Contadora · Estudio Contable</p>
-                            </div>
-                        </div>
-                        <p>“Quiero destacar el excelente trabajo realizado. Siempre fue muy atento y predispuesto a cada cambio y detalle que fuimos revisando. No dio nada por terminado hasta que quedé completamente conforme, lo cual valoro muchísimo. Un gran profesional. Muy conforme con el proceso y el resultado. ¡Gracias Lucas!”</p>
-                    </article>
+      <div class="container hero-content">
 
-                      <article class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-avatar"><img src="assets/EI&CS.jpg" alt="EI&CS"></div>
-                            <div>
-                                <h4>EI&CS</h4>
-                                <p>Pagina para Pyme de mantenimiento industrial</p>
-                            </div>
-                        </div>
-                        <p>“Como experiencia fue excelente, nos fue guiando para poder encontrar objetivos claves para la promoción de nuestra Pyme. Muy recomendable!! El trato y el feedback de poder aportar ideas fue fundamental para lograr un excelente trabajo”</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section plans-section">
-            <div class="container">
-                <div class="section-header">
-                    <p class="eyebrow">Planes de trabajo</p>
-                    <h2>Elegí el nivel de impulso que necesita tu negocio</h2>
-                </div>
-                <div class="plans-grid">
-                    <article class="plan-card">
-                        <h3>Impulso Web</h3>
-                        <p>Ideal para comenzar con una presencia profesional.</p>
-                        <ul>
-                            <li>Diseño web responsive</li>
-                            <li>Optimización de velocidad</li>
-                            <li>Botón directo a WhatsApp</li>
-                        </ul>
-                    </article>
-                    <article class="plan-card featured-plan">
-                        <span class="tag">Más elegido</span>
-                        <h3>Crecimiento Digital</h3>
-                        <p>Para empresas que quieren visibilidad constante y más leads.</p>
-                        <ul>
-                            <li>Web + SEO local</li>
-                            <li>Estrategia de contenidos</li>
-                            <li>Reporte mensual con métricas</li>
-                        </ul>
-                    </article>
-                    <article class="plan-card">
-                        <h3>Escala Comercial</h3>
-                        <p>Solución integral para acelerar ventas y posicionamiento.</p>
-                        <ul>
-                            <li>Web o e-commerce a medida</li>
-                            <li>SEO + redes + automatizaciones</li>
-                            <li>Soporte prioritario 1:1</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section faq-section section-light">
-            <div class="container">
-                <div class="section-header">
-                    <p class="eyebrow">Preguntas frecuentes</p>
-                    <h2>Todo lo que necesitás saber antes de empezar</h2>
-                </div>
-                <div class="faq-grid">
-                    <article class="faq-item">
-                        <h3>¿En cuánto tiempo está lista mi web?</h3>
-                        <p>Depende del alcance, pero en promedio entre 2 y 5 semanas desde la aprobación de propuesta.</p>
-                    </article>
-                    <article class="faq-item">
-                        <h3>¿Trabajan con negocios de cualquier rubro?</h3>
-                        <p>Sí. Adaptamos estrategia, diseño y contenido según tu mercado y tipo de cliente ideal.</p>
-                    </article>
-                    <article class="faq-item">
-                        <h3>¿También gestionan campañas y redes sociales?</h3>
-                        <p>Exacto. Podemos acompañarte con SEO, gestión de redes y optimización continua.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacto" class="section contact-section">
-            <div class="container contact-wrapper">
-                <div class="contact-text">
-                    <p class="eyebrow">Hablemos de tu proyecto</p>
-                    <h2>Agendá una reunión y descubrí cómo convertir tu web en tu mejor vendedor.</h2>
-                    <p>Completá el formulario y te respondemos en menos de 24 hs hábiles con una propuesta concreta para tu negocio.</p>
-                    <div class="contact-methods">
-                        <a href="https://wa.me/5493364354039" class="method" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>+54 9 3364 35-4039</span></a>
-                        <a href="mailto:garridolucas14@gmail.com" class="method"><i class="fas fa-envelope"></i><span>garridolucas14@gmail.com</span></a>
-                        <span class="method"><i class="fas fa-location-dot"></i><span>San Nicolás de los Arroyos, Argentina</span></span>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nombre y apellido</label>
-                        <input type="text" id="name" name="name" placeholder="Ej: María López" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="business">Empresa / Rubro</label>
-                        <input type="text" id="business" name="business" placeholder="Ej: Estudio contable" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Teléfono / WhatsApp</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Ej: 3364..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">¿Qué objetivo querés lograr?</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Contanos en qué etapa está tu negocio..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary full-width">Enviar consulta</button>
-                    <p class="form-note">Al enviar, te redirigimos a WhatsApp con tu mensaje pre-cargado.</p>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <img src="assets/LG.png" alt="Logo LG.Digital">
-                <div>
-                    <h4>LG.Digital</h4>
-                    <p>Desarrollo web, SEO y estrategia digital.</p>
-                </div>
-            </div>
-            <p class="copyright">© 2026 LG.Digital · Hecho en San Nicolás con enfoque en resultados.</p>
-            <div class="socials">
-                <a href="https://www.instagram.com/g.digital.web/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61584108449187&locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://wa.me/5493364354039" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            </div>
+        <!-- ORB: el wrapper tiene tamaño explícito para que los anillos funcionen -->
+        <div class="hero-orb-wrapper">
+          <!-- Anillos decorativos FUERA del orb para evitar clipping -->
+          <span class="orb-ring orb-ring--1"></span>
+          <span class="orb-ring orb-ring--2"></span>
+          <span class="orb-ring orb-ring--3"></span>
+          <!-- Círculo glass con logo -->
+          <div class="hero-orb">
+            <img src="assets/roomies-logo-white.png" alt="Roomies">
+          </div>
         </div>
-    </footer>
 
-    <a href="https://wa.me/5493364354039?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        <!-- Badge centrado debajo del orb -->
+        <div class="badge fade-up">
+          <span class="badge-dot"></span>
+          Agencia digital estratégica
+        </div>
 
-    <script src="script.js"></script>
+        <!-- Botones -->
+        <div class="hero-actions fade-up delay-1">
+          <a href="#about" class="btn btn-primary btn-large">
+            Quiénes somos
+            <i class="ph ph-arrow-right"></i>
+          </a>
+          <a href="#method" class="btn btn-ghost btn-large">
+            Sistema de operaciones
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats fade-up delay-2">
+          <div class="hero-stat">
+            <span class="hero-stat__number" data-count="47">0</span><span class="hero-stat__suffix">+</span>
+            <span class="hero-stat__label">Marcas activas</span>
+          </div>
+          <div class="hero-stat__divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat__number" data-count="320">0</span><span class="hero-stat__suffix">%</span>
+            <span class="hero-stat__label">Crecimiento promedio</span>
+          </div>
+          <div class="hero-stat__divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat__number" data-count="4">0</span><span class="hero-stat__suffix">x</span>
+            <span class="hero-stat__label">ROI medido</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-indicator__line"></span>
+      </div>
+
+    </section>
+
+    <!-- BRAND HIGHLIGHT -->
+    <section class="brand-highlight" aria-hidden="true">
+      <img src="assets/roomies-mkt.png" alt="Marketing by Roomies">
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust" aria-label="Clientes y partners">
+      <div class="trust-header">
+        <p class="trust-title">Soluciones dentro del ecosistema Roomies</p>
+      </div>
+      <div class="trust-marquee" aria-hidden="true">
+        <div class="trust-track">
+          <img src="assets/IMG_9949.PNG" alt="">
+          <img src="assets/IMG_9950.PNG" alt="">
+          <img src="assets/IMG_9951.PNG" alt="">
+          <img src="assets/IMG_9952.PNG" alt="">
+          <img src="assets/IMG_9953.PNG" alt="">
+          <img src="assets/IMG_9954.PNG" alt="">
+          <img src="assets/IMG_9949.PNG" alt="">
+          <img src="assets/IMG_9950.PNG" alt="">
+          <img src="assets/IMG_9951.PNG" alt="">
+          <img src="assets/IMG_9952.PNG" alt="">
+          <img src="assets/IMG_9953.PNG" alt="">
+          <img src="assets/IMG_9954.PNG" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- METHOD -->
+    <section class="method section" id="method">
+      <div class="container">
+        <div class="section-header fade-up">
+          <p class="section-eyebrow">Cómo trabajamos</p>
+          <h2 class="section-title">El sistema Roomies</h2>
+          <p class="section-subtitle">Construimos sistemas de crecimiento basados en tres pilares interdependientes.</p>
+        </div>
+        <div class="method-grid">
+
+          <div class="method-card fade-up">
+            <div class="card-glow-follow" aria-hidden="true"></div>
+            <div class="card-number">01</div>
+            <div class="card-icon"><i class="ph ph-buildings"></i></div>
+            <h3>Tipo de negocio</h3>
+            <p>Adaptamos el sistema a tu modelo, industria y momento de crecimiento. No hay templates.</p>
+            <div class="card-arrow"><i class="ph ph-arrow-up-right"></i></div>
+          </div>
+
+          <div class="method-card fade-up delay-1">
+            <div class="card-glow-follow" aria-hidden="true"></div>
+            <div class="card-number">02</div>
+            <div class="card-icon"><i class="ph ph-trend-up"></i></div>
+            <h3>Estrategia</h3>
+            <p>Diseñamos la arquitectura de crecimiento: qué canales, qué mensajes, qué métricas importan.</p>
+            <div class="card-arrow"><i class="ph ph-arrow-up-right"></i></div>
+          </div>
+
+          <div class="method-card fade-up delay-2">
+            <div class="card-glow-follow" aria-hidden="true"></div>
+            <div class="card-number">03</div>
+            <div class="card-icon"><i class="ph ph-lightning"></i></div>
+            <h3>Nivel de crecimiento</h3>
+            <p>Elegimos la intensidad del sistema según tu velocidad, presupuesto y objetivos de escala.</p>
+            <div class="card-arrow"><i class="ph ph-arrow-up-right"></i></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services section" id="services">
+      <div class="container">
+
+        <div class="section-header fade-up">
+          <p class="section-eyebrow">Soluciones</p>
+          <h2 class="section-title">Servicios diseñados<br>para crecer en serio</h2>
+          <p class="section-subtitle">Dos formas de trabajar con nosotros según tu etapa y objetivos.</p>
+        </div>
+
+        <div class="service-block fade-up">
+          <div class="service-block__header">
+            <div class="service-block__icon"><i class="ph ph-rocket-launch"></i></div>
+            <div>
+              <p class="service-block__eyebrow">Gestión integral</p>
+              <h3 class="service-block__title">Integral Marketing Leadership</h3>
+              <p class="service-block__desc">
+                Nos convertimos en tu equipo de marketing. Planificamos, creamos, publicamos y optimizamos todo — con estrategia real, no posts sueltos.
+              </p>
+            </div>
+          </div>
+          <div class="service-block__tiers">
+            <div class="service-tier fade-up">
+              <div class="service-tier__dot service-tier__dot--basic"></div>
+              <div>
+                <p class="service-tier__name">Basic</p>
+                <p class="service-tier__desc">Base estratégica, contenido y presencia activa en redes.</p>
+              </div>
+            </div>
+            <div class="service-tier fade-up delay-1">
+              <div class="service-tier__dot service-tier__dot--standard"></div>
+              <div>
+                <p class="service-tier__name">Standard</p>
+                <p class="service-tier__desc">Más canales, ads, reportes semanales y optimización continua.</p>
+              </div>
+            </div>
+            <div class="service-tier fade-up delay-2">
+              <div class="service-tier__dot service-tier__dot--premium"></div>
+              <div>
+                <p class="service-tier__name">Premium</p>
+                <p class="service-tier__desc">Sistema completo con advisory, eventos y acceso directo al equipo.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#plans" class="btn btn-outline service-block__cta">Ver planes <i class="ph ph-arrow-right"></i></a>
+        </div>
+
+        <div class="service-block service-block--alt fade-up">
+          <div class="service-block__header">
+            <div class="service-block__icon"><i class="ph ph-strategy"></i></div>
+            <div>
+              <p class="service-block__eyebrow">Servicios sueltos</p>
+              <h3 class="service-block__title">Strategic Advisory</h3>
+              <p class="service-block__desc">
+                Consultoría estratégica puntual, auditorías de marca, workshops de posicionamiento y asesoramiento para equipos internos.
+              </p>
+            </div>
+          </div>
+          <div class="service-advisory-grid">
+            <div class="advisory-item fade-up">
+              <i class="ph ph-magnifying-glass"></i>
+              <span>Auditoría de marca</span>
+            </div>
+            <div class="advisory-item fade-up delay-1">
+              <i class="ph ph-chart-line-up"></i>
+              <span>Estrategia de redes sociales</span>
+            </div>
+            <div class="advisory-item fade-up delay-2">
+              <i class="ph ph-megaphone"></i>
+              <span>Redes sociales + Ads</span>
+            </div>
+            <div class="advisory-item fade-up delay-3">
+              <i class="ph ph-users-three"></i>
+              <span>Workshop de equipo</span>
+            </div>
+            <div class="advisory-item fade-up">
+              <i class="ph ph-globe"></i>
+              <span>Landing page con ads</span>
+            </div>
+            <div class="advisory-item fade-up delay-1">
+              <i class="ph ph-hand-heart"></i>
+              <span>Consultoría de posicionamiento</span>
+            </div>
+          </div>
+          <a href="#cta" class="btn btn-outline service-block__cta">Consultar disponibilidad <i class="ph ph-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="events-gallery section" id="events">
+      <div class="container">
+
+        <div class="section-header fade-up">
+          <p class="section-eyebrow">Producción</p>
+          <h2 class="section-title">Eventos que se sienten</h2>
+          <p class="section-subtitle">
+            Producción integral de eventos para marcas.<br>
+            Promotoras · Barra de bebidas · Catering · Ambientación.
+          </p>
+        </div>
+
+        <div class="gallery-grid fade-up delay-1">
+          <div class="gallery-item" data-index="0">
+            <img src="assets/galeria1.jpg" alt="Evento 1">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay__content">
+                <span class="gallery-overlay__label">Ver evento</span>
+                <i class="ph ph-arrow-up-right gallery-overlay__icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-index="1">
+            <img src="assets/galeria2.jpg" alt="Evento 2">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay__content">
+                <span class="gallery-overlay__label">Ver evento</span>
+                <i class="ph ph-arrow-up-right gallery-overlay__icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item" data-index="2">
+            <img src="assets/galeria3.jpg" alt="Evento 3">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay__content">
+                <span class="gallery-overlay__label">Ver evento</span>
+                <i class="ph ph-arrow-up-right gallery-overlay__icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="plans section" id="plans">
+      <div class="container">
+
+        <div class="section-header fade-up">
+          <p class="section-eyebrow">Planes de crecimiento</p>
+          <h2 class="section-title">Escalable según<br>tu etapa de negocio</h2>
+          <p class="section-subtitle">Sin contratos eternos. Sin sorpresas. Resultados medibles desde el mes uno.</p>
+        </div>
+
+        <div class="plans-grid">
+
+          <div class="pricing-card fade-up">
+            <div class="card-glow-follow" aria-hidden="true"></div>
+            <div class="pricing-plan-label">Basic</div>
+            <div class="pricing-tagline">Ideal para comenzar</div>
+            <p class="pricing-desc">Para marcas que están arrancando y necesitan una base sólida de contenido y estrategia.</p>
+            <ul class="pricing-features">
+              <li><i class="ph ph-check"></i> Estrategia de contenido</li>
+              <li><i class="ph ph-check"></i> 12 piezas mensuales</li>
+              <li><i class="ph ph-check"></i> Gestión de 2 redes</li>
+              <li><i class="ph ph-check"></i> Reporte mensual</li>
+              <li class="disabled"><i class="ph ph-minus"></i> Ads Management</li>
+              <li class="disabled"><i class="ph ph-minus"></i> Advisory estratégico</li>
+            </ul>
+            <a href="#cta" class="btn btn-outline btn-full">Consultar</a>
+          </div>
+
+          <div class="pricing-card pricing-card--featured fade-up delay-1">
+            <div class="card-glow-follow" aria-hidden="true"></div>
+            <div class="pricing-badge">Más elegido</div>
+            <div class="pricing-plan-label">Standard</div>
+            <div class="pricing-tagline">Para escalar</div>
+            <p class="pricing-desc">Para marcas en crecimiento que quieren escalar de forma sistemática y medible.</p>
+            <ul class="pricing-features">
+              <li><i class="ph ph-check"></i> Todo lo de Basic</li>
+              <li><i class="ph ph-check"></i> 24 piezas mensuales</li>
+              <li><i class="ph ph-check"></i> Gestión de 4 redes</li>
+              <li><i class="ph ph-check"></i> Ads Management</li>
+              <li><i class="ph ph-check"></i> Reporte semanal</li>
+              <li class="disabled"><i class="ph ph-minus"></i> Advisory estratégico</li>
+            </ul>
+            <a href="#cta" class="btn btn-primary btn-full">Agendar llamada</a>
+          </div>
+
+          <div class="pricing-card fade-up delay-2">
+            <div class="card-glow-follow" aria-hidden="true"></div>
+            <div class="pricing-plan-label">Premium</div>
+            <div class="pricing-tagline">Sistema completo</div>
+            <p class="pricing-desc">Para marcas que quieren el sistema completo con acceso directo al equipo Roomies.</p>
+            <ul class="pricing-features">
+              <li><i class="ph ph-check"></i> Todo lo de Standard</li>
+              <li><i class="ph ph-check"></i> Piezas ilimitadas</li>
+              <li><i class="ph ph-check"></i> Advisory estratégico</li>
+              <li><i class="ph ph-check"></i> Producción de eventos</li>
+              <li><i class="ph ph-check"></i> Acceso directo al equipo</li>
+              <li><i class="ph ph-check"></i> Dashboard en tiempo real</li>
+            </ul>
+            <a href="#cta" class="btn btn-outline btn-full">Consultar</a>
+          </div>
+
+        </div>
+
+        <p class="plans-note fade-up">
+          <i class="ph ph-shield-check"></i>
+          Sin permanencia mínima · Onboarding en 48hs · Resultados en 30 días o te devolvemos el primer mes
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section section" id="cta">
+      <div class="container">
+        <div class="cta-card fade-up">
+          <div class="cta-glow" aria-hidden="true"></div>
+          <p class="section-eyebrow">¿Listo para escalar?</p>
+          <h2 class="cta-title">Tu marketing<br><em>merece funcionar.</em></h2>
+          <p class="cta-subtitle">
+            Reservá una llamada de 30 minutos. Sin compromiso. Sin pitch agresivo.<br>
+            Solo una conversación honesta sobre dónde está tu marca y a dónde puede ir.
+          </p>
+          <div class="cta-actions">
+            <a href="https://wa.me/TUNUMERO" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+              <i class="ph ph-whatsapp-logo"></i>
+              Reservar llamada
+            </a>
+            <a href="mailto:hola@roomies.com" class="btn btn-ghost btn-large">
+              hola@roomies.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/roomies-logo-white.png" alt="Roomies" class="footer-logo">
+        <p>Marketing que construye sistemas,<br>no solo campañas.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <p class="footer-col__title">Navegación</p>
+          <a href="#method">Método</a>
+          <a href="#services">Servicios</a>
+          <a href="#events">Eventos</a>
+          <a href="#plans">Planes</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Contacto</p>
+          <a href="mailto:hola@roomies.com">hola@roomies.com</a>
+          <a href="https://instagram.com/roomies" target="_blank" rel="noopener">@roomies</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <script>document.write(new Date().getFullYear())</script> ROOMIES Agency. Todos los derechos reservados.</p>
+      <p>Buenos Aires, Argentina</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
